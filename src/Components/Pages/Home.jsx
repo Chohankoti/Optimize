@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Cal from './Cal';
+
 export default function Home() {
   const [formData, setFormData] = useState({
     num1: '',
@@ -17,12 +18,9 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const result = <Cal formData={formData} />;
-    alert(`Result: ${result.props.children}`);
+    alert(`Result: ${Cal({ formData }).toFixed(2)}`);
   };
   
-  
-
   return (
     <div className="flex justify-center items-center h-screen">
       <form onSubmit={handleSubmit} className="flex flex-col items-center bg-gray-100 p-8 rounded-lg shadow-md">
