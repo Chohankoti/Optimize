@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Cal from './Cal';
 export default function Home() {
   const [formData, setFormData] = useState({
     num1: '',
@@ -17,26 +17,11 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform calculation based on selected operation
-    let result;
-    switch (formData.operation) {
-      case 'sum':
-        result = parseFloat(formData.num1) + parseFloat(formData.num2);
-        break;
-      case 'subtract':
-        result = parseFloat(formData.num1) - parseFloat(formData.num2);
-        break;
-      case 'multiply':
-        result = parseFloat(formData.num1) * parseFloat(formData.num2);
-        break;
-      case 'divide':
-        result = parseFloat(formData.num1) / parseFloat(formData.num2);
-        break;
-      default:
-        result = NaN;
-    }
-    alert(`Result: ${result}`);
+    const result = <Cal formData={formData} />;
+    alert(`Result: ${result.props.children}`);
   };
+  
+  
 
   return (
     <div className="flex justify-center items-center h-screen">
