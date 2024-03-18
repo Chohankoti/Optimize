@@ -1,11 +1,21 @@
-import { Button } from 'flowbite-react';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './Components/NavBar';
+import Home from './Components/Pages/Home';
+import Cal from './Components/Pages/Cal';
+import Images from './Components/Pages/Images';
 
-function App() {
+
+export default function App() {
   return (
-    <div>
-      <Button>Click me</Button>
-    </div>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<NavBar/>}>
+            <Route path="/" element={<Home/>} />
+            <Route path="/cal" element={<Cal/>} />
+            <Route path="/images" element={<Images/>} />
+          </Route>
+        </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
