@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Home from './Components/Pages/Home';
-import Cal from './Components/Pages/Cal';
+import About from './Components/Pages/About';
 import Images from './Components/Pages/Images';
+
 
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<NavBar/>}>
             <Route path="/" element={<Home/>} />
-            <Route path="/cal" element={<Cal/>} />
+            <Route path="/about" element={<About/>} />
             <Route path="/images" element={<Images/>} />
           </Route>
         </Routes>
