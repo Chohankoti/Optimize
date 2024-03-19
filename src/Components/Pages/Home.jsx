@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Cal from './Cal';
+import React, { useState, } from 'react';
+// import Cal from './Cal';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -18,7 +18,22 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    {/*
+          
+      This method is called dynamic import. 
+      Dynamic import is a feature in JavaScript that allows you to import modules dynamically at runtime. 
+
+      
+
+   */}
+    
+   import("./Cal.js").then(module => {
+    const Cal = module.default; 
     alert(`Result: ${Cal({ formData }).toFixed(2)}`);
+    })
+
+    // alert(`Result: ${Cal({ formData }).toFixed(2)}`);
+    
   };
   
   return (

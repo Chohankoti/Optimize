@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { lazy} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
-import Home from './Components/Pages/Home';
-import About from './Components/Pages/About';
-import Images from './Components/Pages/Images';
+// import Home from './Components/Pages/Home';
+// import About from './Components/Pages/About';
+// import Images from './Components/Pages/Images';
 
-
+const Home = lazy(() => wait(1000).then(()=> import('./Components/Pages/Home')) )
+const About = lazy(() => wait(1000).then(()=> import('./Components/Pages/About')))
+const Images = lazy(() => wait(1000).then(()=>  import('./Components/Pages/Images')))
 
 export default function App() {
   return (
@@ -20,3 +22,11 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+   

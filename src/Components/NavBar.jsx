@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { Link, Outlet  } from 'react-router-dom'; 
+import { Link, Outlet } from 'react-router-dom';
+import ReactLoading from "react-loading";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -127,10 +128,18 @@ function NavBar() {
           )}
         </Transition>
       </nav>
-    
-       <Outlet/>
-     
-      </>
+      <React.Suspense fallback={
+        <div className="flex justify-center items-center h-screen">
+          <ReactLoading type="spinningBubbles" color="#0000FF" />
+        </div>
+      }>
+        <Outlet />
+      </React.Suspense>
+
+
+
+
+    </>
   );
 }
 
