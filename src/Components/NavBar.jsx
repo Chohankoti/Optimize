@@ -98,6 +98,12 @@ function NavBar() {
                   >
                     List
                   </Link>
+                  <Link
+                    to="/skeleton"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  >
+                    Skeleton
+                  </Link>
 
                 </div>
               </div>
@@ -176,70 +182,76 @@ function NavBar() {
                 </Link>
 
                 <div className="relative">
-                    <button
-                      onClick={() => setIsOpen(!isOpen)}
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none"
+                  <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none"
+                  >
+                    Images
+                    <svg
+                      className="h-5 w-5 inline-block ml-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
                     >
-                      Images
-                      <svg
-                        className="h-5 w-5 inline-block ml-1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 12a2 2 0 100-4 2 2 0 000 4z"
-                          clipRule="evenodd"
-                        />
-                        <path
-                          fillRule="evenodd"
-                          d="M10 2a8 8 0 100 16 8 8 0 000-16zM2 10a8 8 0 1116 0 8 8 0 01-16 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                    <Transition
-                      show={isOpen}
-                      enter="transition ease-out duration-100 transform"
-                      enterFrom="opacity-0 scale-95"
-                      enterTo="opacity-100 scale-100"
-                      leave="transition ease-in duration-75 transform"
-                      leaveFrom="opacity-100 scale-100"
-                      leaveTo="opacity-0 scale-95"
-                    >
-                      {(ref) => (
-                        <div ref={ref} className="absolute z-10 mt-2 w-56 origin-top-right bg-white rounded-md shadow-lg right-0">
-                          <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                            <Link
-                              to="/optimizedimages"
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                              role="menuitem"
-                              tabIndex="-1"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              Optimized Image
-                            </Link>
-                            <Link
-                              to="/unoptimizedimages"
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                              role="menuitem"
-                              tabIndex="-1"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              Unoptimized Image
-                            </Link>
-                          </div>
+                      <path
+                        fillRule="evenodd"
+                        d="M10 12a2 2 0 100-4 2 2 0 000 4z"
+                        clipRule="evenodd"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        d="M10 2a8 8 0 100 16 8 8 0 000-16zM2 10a8 8 0 1116 0 8 8 0 01-16 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <Transition
+                    show={isOpen}
+                    enter="transition ease-out duration-100 transform"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="transition ease-in duration-75 transform"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    {(ref) => (
+                      <div ref={ref} className="absolute z-10 mt-2 w-56 origin-top-right bg-white rounded-md shadow-lg right-0">
+                        <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                          <Link
+                            to="/optimizedimages"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                            role="menuitem"
+                            tabIndex="-1"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Optimized Image
+                          </Link>
+                          <Link
+                            to="/unoptimizedimages"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                            role="menuitem"
+                            tabIndex="-1"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Unoptimized Image
+                          </Link>
                         </div>
-                      )}
-                    </Transition>
-                  </div>
-                
+                      </div>
+                    )}
+                  </Transition>
+                </div>
+
                 <Link
                   to="/list"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   List
+                </Link>
+                <Link
+                  to="/skeleton"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Skeleton
                 </Link>
               </div>
             </div>
