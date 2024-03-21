@@ -1,19 +1,28 @@
-import React from 'react';
-
-
+import React, { useEffect, useState } from 'react';
 
 const UnOptimizedImage = () => {
-  const images = Array.from({ length: 30 }, (_, index) => ({
-    [`image${index + 1}`]: `../../assets/images/image${index + 1}.jpg`,
-  }));
-  console.log(images)
+  const [imageList, setImageList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:9000/images')
+      .then(response => response.json())
+      .then(data => setImageList([...data, ...data, ...data, ...data, ...data, ...data, ...data, ...data, ...data, ...data]))
+      .catch(error => console.error('Error fetching image list:', error));
+  }, []);
+
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {Object.keys(images).map((imageName) => (
-        <div key={imageName} className="aspect-w-1 aspect-h-1">
-          <img src={images[imageName]} alt={`Image ${imageName}`} className="object-cover w-full h-full rounded-lg" />
-        </div>
-      ))}
+    <div className="container mx-auto px-4 my-4">
+      <div className="grid grid-cols-3 gap-4">
+        {imageList.map((imageName, index) => (
+          <div key={index} className="aspect-w-1 aspect-h-1">
+            <img
+              src={`http://localhost:9000/images/${imageName}`}
+              alt={`Image ${index + 1}`}
+              className="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
