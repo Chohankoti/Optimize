@@ -13,6 +13,8 @@ export default function User() {
         { id: 8, name: 'user8', age: 26, email: 'user8@example.com' },
         { id: 9, name: 'user9', age: 33, email: 'user9@example.com' },
         { id: 10, name: 'user10', age: 34, email: 'user10@example.com' },
+        { id: 11, name: 'user11', age: 39, email: 'user11@example.com' },
+        { id: 12, name: 'user12', age: 37, email: 'user12@example.com' },
     ];
 
     const [users, setUser] = useState(userList);
@@ -23,8 +25,8 @@ export default function User() {
     });
 
     return (
-        <div>
-            <h1>UserMemo Hook</h1>
+        <div className="flex flex-row flex-wrap">
+            <h1 className="w-full text-center text-2xl font-bold mb-4">UserMemo Hook</h1>
             {displayList}
         </div>
     );
