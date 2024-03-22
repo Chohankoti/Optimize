@@ -7,6 +7,7 @@ import OptimizedImage from './Components/Pages/OptimizedImage';
 import UnOptimizedImage from './Components/Pages/UnOptimizedImage';
 import ListItems from './Components/Pages/ListItems';
 import SkeletonHome from './Components/Skeleton/SkeletonHome';
+import User from './Components/Memoization/User';
 
 // const Home = lazy(() => wait(1000).then(()=> import('./Components/Pages/Home')) )
 // const About = lazy(() => wait(1000).then(()=> import('./Components/Pages/About')))
@@ -15,6 +16,7 @@ import SkeletonHome from './Components/Skeleton/SkeletonHome';
 // const Images = lazy(() => wait(1000).then(()=>  import('./Components/Pages/Images')))
 // const ListItems = lazy(() => wait(1000).then(()=>  import('./Components/Pages/ListItems')))
 // const SkeletonHome = lazy(() => wait(1000).then(()=>  import('./Components/Skeleton/SkeletonHome')))
+// const User = lazy(() => wait(1000).then(()=>  import('./Components/Memoization/User')))
 
 export default function App() {
   return (
@@ -27,6 +29,7 @@ export default function App() {
             <Route path="/unoptimizedimages" element={<UnOptimizedImage/>} />
             <Route path="/list" element={<ListItems/>} />
             <Route path="/skeleton" element={<SkeletonHome/>} />
+            <Route path="/memo" element={<User/>} />
           </Route>
         </Routes>
     </BrowserRouter>
