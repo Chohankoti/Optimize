@@ -24,7 +24,6 @@ const OptimizedImage = () => {
                 alt={`Image ${index + 1}`}
                 className="object-cover w-full h-full"
                 effect='blur'
-                placeholder={<div className="bg-gray-300 w-full h-full"></div>} // Gray placeholder
               />
             </div>
           </div>
