@@ -12,7 +12,8 @@ const UnOptimizedImage = () => {
 
   return (
     <div className="container mx-auto px-4 my-4">
-      <div className="grid grid-cols-3 gap-4">
+      <h1 className="text-center text-2xl font-bold py-4">UnOptimized Image Loading</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {imageList.map((imageName, index) => (
           <div key={index} className="aspect-w-1 aspect-h-1">
             <img
