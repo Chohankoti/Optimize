@@ -21,17 +21,17 @@ export default function User() {
     const [counter, setCounter] = useState(0);
     const [newUser, setNewUser] = useState({});
 
-     // const displayList = users.map(user => {
-    //     console.log("No of time loading....");
-    //     return <Details key={user.id} user={user} />;
-    // });
+     const displayList = users.map(user => {
+        console.log("No of time loading....");
+        return <Details key={user.id} user={user} />;
+    });
     
-    const displayList = useMemo(() => {
-        return users.map(user => {
-            console.log("No of time loading....");
-            return <Details key={user.id} user={user} />;
-        });
-    }, [users]);
+    // const displayList = useMemo(() => {
+    //     return users.map(user => {
+    //         console.log("No of time loading....");
+    //         return <Details key={user.id} user={user} />;
+    //     });
+    // }, [users]);
 
     const handleCounter = () => {
         setCounter(counter => counter + 1);
@@ -55,34 +55,34 @@ export default function User() {
                     Increment value: {counter}
                 </button>
             </div>
-            <div className="flex justify-center mt-4">
+            <div className="flex flex-wrap justify-center mt-4">
                 <input
                     type="number"
-                    placeholder="Enter "id
+                    placeholder="Enter ID"
                     value={newUser.id || ''}
                     onChange={e => setNewUser({ ...newUser, id: e.target.value })}
-                    className="mr-2 px-2 py-1 border border-gray-300 rounded"
+                    className="mr-2 mb-2 px-2 py-1 border border-gray-300 rounded"
                 />
                 <input
                     type="text"
                     placeholder="Enter Name"
                     value={newUser.name || ''}
                     onChange={e => setNewUser({ ...newUser, name: e.target.value })}
-                    className="mr-2 px-2 py-1 border border-gray-300 rounded"
+                    className="mr-2 mb-2 px-2 py-1 border border-gray-300 rounded"
                 />
                 <input
                     type="number"
                     placeholder="Enter Age"
                     value={newUser.age || ''}
                     onChange={e => setNewUser({ ...newUser, age: parseInt(e.target.value) || '' })}
-                    className="mr-2 px-2 py-1 border border-gray-300 rounded"
+                    className="mr-2 mb-2 px-2 py-1 border border-gray-300 rounded"
                 />
                 <input
                     type="email"
                     placeholder="Enter Email"
                     value={newUser.email || ''}
                     onChange={e => setNewUser({ ...newUser, email: e.target.value })}
-                    className="mr-2 px-2 py-1 border border-gray-300 rounded"
+                    className="mr-2 mb-2 px-2 py-1 border border-gray-300 rounded"
                 />
                 <button
                     onClick={handleAddUser}
